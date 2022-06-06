@@ -1,3 +1,4 @@
+# Model merupakan pendefinisian seluruh variabel input
 from django.db import models
 class alternatif(models.Model):
     kodealternatif = models.CharField(max_length=3, primary_key=True)

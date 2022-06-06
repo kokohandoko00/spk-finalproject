@@ -1,5 +1,6 @@
+# file ini untuk setting form html pada tab alternatif
 from django import forms
-from .models import alternatif
+from .models import alternatif #Import fungsi alternatif dari file models
 class formtabel(forms.ModelForm):
     class Meta:
         model = alternatif
@@ -14,7 +15,7 @@ class formtabel(forms.ModelForm):
             'c5': forms.Select(attrs={'class':'form-control', 'placeholder':'C5'}),            
         }
         labels ={
-            'kodealernatif':'KODE',
+            'kodealternatif':'KODE ALTERNATIF',
             'namaalternatif':'NAMA',
             'c1':'C1',
             'c2':'C2',

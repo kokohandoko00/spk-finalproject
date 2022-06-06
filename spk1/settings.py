@@ -77,12 +77,12 @@ WSGI_APPLICATION = 'spk1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'saw',
-        'USERNAME':'root',
-        'PASSWORD':'',
-        'PORT':'3306',
-        'HOSTNAME':'localhost',
+        'ENGINE': 'django.db.backends.mysql',  
+        'NAME': 'spk',  
+        'USER': 'root',  
+        'PASSWORD': '',  
+        'HOST': '127.0.0.1',  
+        'PORT': '3306', 
     }
 }
 
