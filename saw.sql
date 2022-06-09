@@ -1,6 +1,4 @@
--- phpMyAdmin SQL Dump
--- version 4.9.2
--- https://www.phpmyadmin.net/
+-- Menggunakan platform phpmyadmin untuk penyimpanan database
 --
 -- Host: 127.0.0.1
 -- Generation Time: Apr 30, 2020 at 04:53 PM
@@ -19,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `saw`
+-- Database: `spk`
 --
 
 -- --------------------------------------------------------
