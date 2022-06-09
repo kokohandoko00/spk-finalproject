@@ -20,6 +20,5 @@ Implementation of the django framework Simple Additive Weighting (SAW) decision 
     <li>Copy the source code into the created virtaulenv file</li>
     <li>Create a MySQL database (check settings.py )</li>
     <li>Open the source code folder that has been copied, then migrate the database <code>python manage.py migrate</code> next <code>python manage.py migration</code></li>
-    <li>Finalango server <code> python manage.py runserver</li>
+    <li>run python manage.py runserver to start the project</li>
 <ol>
-<h3>Result </h3>
