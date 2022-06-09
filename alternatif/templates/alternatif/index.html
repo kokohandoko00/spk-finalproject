@@ -1,57 +1,77 @@
-{% extends "dasar.html" %}
-{% block satu %}
-<div class="container">
-<form method="POST">
-{% csrf_token %}
-    <table>
-        <div class="form-row">
-            <div class="form-group col-md-2">
-            <!-- variabel kode alternatif didefinisikan pada file table.py -->
-            <label>{{table.kodealternatif.label}}</label>
-            {{table.kodealternatif}}
-            </div>
-        </div>
-        <div class ="form-row">
-            <div class = "form-group col-md-4   ">
-            <!-- variabel nama alternatif didefinisikan pada file table.py -->
-            <label>{{table.namaalternatif.label}}</label>
-            {{table.namaalternatif}}
-            </div>
-        </div>
-        <div class = "form-row">
-            <div class="form-group col-md-4">
-            <label>{{table.c1.label}}</label>
-            {{table.c1}}
-            </div>
-        </div>
-        <div class = "form-row">
-            <div class="form-group col-md-4">
-            <label>{{table.c2.label}}</label>
-            {{table.c2}}
-            </div>
-        </div>
-        <div class = "form-row">
-            <div class="form-group col-md-4">
-            <label>{{table.c3.label}}</label>
-            {{table.c3}}
-            </div>
-        </div>
-        <div class = "form-row">
-            <div class="form-group col-md-4">
-            <label>{{table.c4.label}}</label>
-            {{table.c4}}
-            </div>
-        </div>
-        <div class = "form-row">
-            <div class="form-group col-md-4">
-            <label>{{table.c5.label}}</label>
-            {{table.c5}}
-            </div>
-        </div>
-    </table>
-<button type="submit" class="btn btn-primary">{{tombol}}</button>
-</form>
+{% extends "dasar.html" %} {% block satu %}
+<div class="container flex flex-col mt-[5rem]" >
+  <p class="title text-2xl font-bold">
+    Masukkan Parameter untuk Pengambilan Keputusan
+  </p>
+  <p class="desc">
+    Pastikan data yang dimasukkan benar karena sangat berpengaruh untuk pengambilan keputusan
+  </p>
 
+  <form method="POST" class="flex flex-col h-auto border-2 rounded-md px-[4rem] pt-[2rem] pb-[4rem] mt-[2rem] mb-[5rem]  space-y-4">
+    {% csrf_token %}
+    <table class="flex flex-col h-full">
+      <div class="form-row">
+        <div class="form-group flex flex-col">
+          <!-- variabel kode alternatif didefinisikan pada file table.py -->
+          <label class="font-bold">{{table.kodealternatif.label}}</label>
+          <p class="text-sm">kode alternatif untuk memberikan tanda destinasi negara</P>
+            {{table.kodealternatif}}  
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group flex flex-col mb-[2rem]">
+          <!-- variabel nama alternatif didefinisikan pada file table.py -->
+          <label class="font-bold">{{table.namaalternatif.label}}</label>
+          <p class="text-sm">nama destinasi negara yang diinginkan</P>
+          {{table.namaalternatif}}
+        </div>
+      </div>
+      <p class="parameter-title flex w-full border-b-2 border-gray-600  text-lg font-semibold">Parameter Keputusan </p>
+      
+      <div class="parameter flex flex-row w-full pt-[1rem] pb-[2rem]">
+        <div class="parameter-left w-1/2">
+          <div class="form-row">
+            <div class="form-group flex flex-col ">
+              <label class="font-bold">{{table.c1.label}}</label>
+              <p class="text-sm">Parameter pertama (biaya perjalanan)</P>
+              {{table.c1}}
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group flex flex-col pt-[1rem]">
+              <label class="font-bold">{{table.c2.label}}</label>
+              <p class="text-sm">Parameter keputusan kedua</P>
+              {{table.c2}}
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group flex flex-col">
+              <label class="font-bold">{{table.c3.label}}</label>
+              <p class="text-sm">Parameter keputusan ketiga</P>
+              {{table.c3}}
+            </div>
+          </div>
+        </div>
+        <div class="parameter-right w-1/2">
+          <div class="form-row">
+            <div class="form-group flex flex-col pt-[1rem]">
+              <label class="font-bold">{{table.c4.label}}</label>
+              <p class="text-sm">Parameter keputusan keempat</P>
+              {{table.c4}}
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group flex flex-col pt-[1rem] pb-[2rem]">
+              <label class="font-bold">{{table.c5.label}}</label>
+              <p class="text-sm">Parameter keputusan kelima</P>
+              {{table.c5}}
+            </div>
+          </div>
+          <button type="submit" class="btn border-2 border-orange-500 w-3/4 h-[3rem] rounded-md text-orange-500 font-bold" >{{tombol}}</button>
+        </div>
+      </div>
+    </table>
+  </form>
 </div>
 
 {% endblock satu %}

@@ -1,5 +1,7 @@
 # DECISION-SUPPORT-SYSTEM
-Implemetation of the django framework Simple Additive Weighting (SAW) decision support system
+
+Implementation of the django framework Simple Additive Weighting (SAW) decision support system
+
 <h3>The Tools Needed</h3>
 <ul>
 <li>Install Mysql</li>
@@ -22,7 +24,3 @@ Implemetation of the django framework Simple Additive Weighting (SAW) decision s
 <li>Finally, run the django server <code> python manage.py runserver</li>
 <ol>
 <h3>Result </h3>
-<img src = 'https://github.com/DimasGithub/DECISION-SUPPORT-SYSTEM/blob/master/Screenshot%20from%202021-07-09%2021-40-24.png'/>
-<img src = 'https://github.com/DimasGithub/DECISION-SUPPORT-SYSTEM/blob/master/Screenshot%20from%202021-07-09%2021-38-05.png'/>
-<img src = 'https://github.com/DimasGithub/DECISION-SUPPORT-SYSTEM/blob/master/Screenshot%20from%202021-07-09%2021-39-02.png'/>
-

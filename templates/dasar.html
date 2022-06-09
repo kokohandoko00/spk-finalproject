@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% include "snippets/styles.html" %}
-    {% block gaya %}
-    
-    {% endblock gaya%}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% comment %} {% include "snippets/styles.html" %} {% endcomment %}
+    <script src="https://cdn.tailwindcss.com"></script>
+     {%block gaya %} {% endblock gaya%}
     <title>{{title}}</title>
-</head>
-<body>
-{% include "snippets/nav.html" %}
-
-{% block satu %}
-{% endblock satu %}
-
-{% include "snippets/script.html" %}
-</body>
+  </head>
+  <body class="flex flex-col justify-center items-center w-screen h-full">
+    {% include "snippets/nav.html" %} {% block satu %} {% endblock satu %}
+    {%include "snippets/script.html" %}
+  </body>
 </html>

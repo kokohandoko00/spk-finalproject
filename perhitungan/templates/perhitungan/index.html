@@ -1,216 +1,217 @@
 {% extends "dasar.html" %}
 {% block satu %}
-<div class="main" style="margin-left: 20px;">
-<h4>TABEL ALTERNATIF</h4>
+<div class="main flex mt-[8rem]" style="margin-left: 20px;">
+<h4 class="text-lg font-bold mb-[.5rem]">TABEL ALTERNATIF</h4>
 </div>
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">KODE ALTERNATIF</th>
-      <th scope="col">NAMA ALTERNATIF</th>
-      <th scope="col">C1</th>
-      <th scope="col">C2</th>
-      <th scope="col">C3</th>
-      <th scope="col">C4</th>
-      <th scope="col">C5</th>
-      <th scope="col">ACTION</th>
+<table class="table-auto flex flex-col justify-center items-center py-[2rem] border-2 rounded-md  w-2/3  h-auto ">
+  <thead class="flex w-4/5 ">
+    <tr class="flex w-full  justify-between items-center">
+      <th class="text-left text-sm w-full ">KODE</th>
+      <th class="text-left text-sm w-full">NAMA</th>
+      <th class="text-left w-full">C1</th>
+      <th class="text-left w-full">C2</th>
+      <th class="text-left w-full">C3</th>
+      <th class="text-left w-full">C4</th>
+      <th class="text-left w-full">C5</th>
+      <th class="text-left w-full">ACTION</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="flex flex-col w-4/5">
     {% for a in table %}
-    <tr>
-      <td>{{a.kodealternatif}}</td>
-      <td>{{a.namaalternatif}}</td>
-      <td>{{a.c1}}</td>
-      <td>{{a.c2}}</td>
-      <td>{{a.c3}}</td>
-      <td>{{a.c4}}</td>
-      <td>{{a.c5}}</td>
-      <td><a href="{% url "perhitungan:hapus" a.kodealternatif %}" class="btn btn-danger btn-sm active" role="button" aria-pressed="true">Hapus</a>
-      <a href="{% url "perhitungan:edit" a.kodealternatif %}" class="btn btn-warning btn-sm active" role="button" aria-pressed="true">Edit</a></td>
+    <tr class="flex flex-row w-full mb-[.5rem] h-[2.5rem] border-b justify-between items-center">
+      <td class="flex w-full">{{a.kodealternatif}}</td>
+      <td  class="flex w-full">{{a.namaalternatif}}</td>
+      <td  class="flex w-full">{{a.c1}}</td>
+      <td  class="flex w-full">{{a.c2}}</td>
+      <td  class="flex w-full">{{a.c3}}</td>
+      <td  class="flex w-full">{{a.c4}}</td>
+      <td  class="flex w-full">{{a.c5}}</td>
+      <td  class="flex w-full h-[2rem] text-sm text-white font-semibold space-x-2">
+        <a href="{% url "perhitungan:hapus" a.kodealternatif %}" class="btn bg-red-500 flex w-full h-full justify-center items-center rounded-sm"  role="button " aria-pressed="true">Hapus</a>
+        <a href="{% url "perhitungan:edit" a.kodealternatif %}" class="btn bg-sky-500 flex w-full h-full justify-center items-center rounded-sm" role="button" aria-pressed="true">Edit</a>
+      </td>
     </tr>
     {% endfor %}
   </tbody>
 </table>
 <div class="main" style="margin-left: 20px;">
-<h4>TABLE NORMALISASI</h4>
+<h4 class="text-lg font-bold flex mt-[2rem] mb-[.5rem]">TABLE NORMALISASI</h4>
 </div>
-<div class="d-flex justify-content-around">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th scope="col">C1 NORMALISASI</th>
+<div class="flex flex-row justify-center items-center p-[2rem] border-2 rounded-md  w-2/3  h-auto ">
+  <table class="table-auto flex flex-col w-4/5">
+    <thead class="flex w-full">
+      <tr class="flex  w-full">
+        <th class="flex w-full" scope="col">C1 NORMALISASI</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="flex flex-col w-full " >
       {% for a in normc1 %}
-      <tr>
-        <td>{{a}}</td>
+      <tr class="flex w-full mb-[.5rem] h-[2rem] border-b ">
+        <td class="flex w-full">{{a}}</td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
-  <table class="table table-hover">
-    <thead>
-      <tr>
+  <table class="table-auto flex-col flex w-4/5">
+    <thead class="flex w-full">
+      <tr class="flex w-full">
         <th scope="col">C2 NORMALISASI</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="flex w-full flex-col">
       {% for a in normc2 %}
-      <tr>
-        <td>{{a}}</td>
+      <tr class="flex w-full mb-[.5rem] h-[2rem] border-b ">
+        <td class="flex w-full">{{a}}</td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th scope="col">C3 NORMALISASI</th>
+  <table class="table-auto flex flex-col w-4/5">
+    <thead class="flex w-full">
+      <tr class="flex w-full">
+        <th scope="col" class="flex  w-full">C3 NORMALISASI</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="flex flex-col w-full">
       {% for a in normc3 %}
-      <tr>
-        <td>{{a}}</td>
+      <tr class="flex w-full mb-[.5rem] h-[2rem] border-b ">
+        <td class="flex w-full">{{a}}</td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th scope="col">C4 NORMALISASI</th>
+  <table class="table-auto flex-col flex w-4/5">
+    <thead class="flex w-full">
+      <tr class="flex w-full">
+        <th scope="col" class="flex w-full">C4 NORMALISASI</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="flex flex-col w-full">
       {% for a in normc4 %}
-      <tr>
-        <td>{{a}}</td>
+      <tr class="flex w-full mb-[.5rem] h-[2rem] border-b ">
+        <td class="flex w-full">{{a}}</td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th scope="col">C5 NORMALISASI</th>
+  <table class="table-auto flex flex-col w-4/5">
+    <thead class="flex w-full">
+      <tr class="flex w-full">
+        <th scope="col" class="flex w-full">C5 NORMALISASI</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="flex flex-col w-full">
       {% for a in normc5 %}
-      <tr>
-        <td>{{a}}</td>
+      <tr class="flex w-full mb-[.5rem] h-[2rem] border-b ">
+        <td class="flex w-full">{{a}}</td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
 </div>
 <div class="main" style="margin-left: 20px;">
-<h4>NORMALISASI X BOBOT</h4>
+<h4 class="text-lg font-bold flex mt-[2rem] mb-[.5rem]">NORMALISASI X BOBOT</h4>
 </div>
-<div class="d-flex justify-content-around">
-
-  <table class="table table-hover">
+<div class="flex flex-row justify-center items-center p-[2rem] border-2 rounded-md  w-2/3  h-auto ">
+  <table class="table-auto flex flex-col w-4/5">
     <thead>
-      <tr>
+      <tr class="flex w-full">
         <th scope="col">C1 X 25%</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="flex flex-col w-full" >
       {% for a in botc1 %}
-      <tr>
+      <tr class="flex w-full mb-[.5rem] h-[2rem] border-b">
         <td>{{a}}</td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
-  <table class="table table-hover">
+  <table class="table-auto flex flex-col w-4/5">
     <thead>
       <tr>
         <th scope="col">C2 X 15%</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="flex flex-col w-full">
       {% for a in botc2 %}
-      <tr>
+      <tr class="flex w-full mb-[.5rem] h-[2rem] border-b">
         <td>{{a}}</td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
-  <table class="table table-hover">
+  <table class="table-auto flex flex-col w-4/5">
     <thead>
       <tr>
         <th scope="col">C3 X 30%</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="flex flex-col w-full">
       {% for a in botc3 %}
-      <tr>
+      <tr class="flex w-full mb-[.5rem] h-[2rem] border-b">
         <td>{{a}}</td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
-  <table class="table table-hover">
+  <table class="table-auto flex flex-col w-4/5">
     <thead>
       <tr>
         <th scope="col">C4 X 25%</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="flex flex-col w-full">
       {% for a in botc4 %}
-      <tr>
+      <tr class="flex w-full mb-[.5rem] h-[2rem] border-b">
         <td>{{a}}</td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
-  <table class="table table-hover">
+  <table class="table-auto flex flex-col w-4/5">
     <thead>
       <tr>
         <th scope="col">C5 X 5%</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="flex flex-col w-full">
       {% for a in botc5 %}
-      <tr>
+      <tr class="flex w-full mb-[.5rem] h-[2rem] border-b">
         <td>{{a}}</td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
 </div>
-<div class="main" style="margin-left: 20px;">
-  <h4>HASIL AKHIR</h4>
+<div class="main flex flex-col justify-center items-center" style="margin-left: 20px;">
+  <h4 class="text-lg font-bold flex mt-[2rem] ">HASIL AKHIR</h4>
+  <p class="flex mb-[.5rem] text-green-700" scope="col">Hasil akhir dengan nilai tertinggi, merupakan keputusan yang paling direkomendasikan</p>
 </div>
-<div class="d-flex justify-content-around">
-
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">KODE ALTERNATIF</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for a in hasil %}
-    <tr>
-      <td>{{a}}</td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
-<table class="table table-hover">
+<div class="flex flex-row justify-center items-center mb-[8rem] p-[2rem] border-4 border-green-500 rounded-md  w-2/3  h-auto ">
+  <table class="table-auto flex flex-col w-1/5">
+    <thead>
+      <tr>
+        <th scope="col">KODE ALTERNATIF</th>
+      </tr>
+    </thead>
+    <tbody class="flex flex-col w-full">
+      {% for a in hasil %}
+      <tr class="flex w-full mb-[.5rem] h-[2rem] border-b">
+        <td>{{a}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <table class="table-auto flex flex-col  w-1/5">
     <thead>
       <tr>
         <th scope="col">HASIL AKHIR</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="flex flex-col w-full">
       {% for a in hasil2 %}
-      <tr>
+      <tr class="flex w-full mb-[.5rem] h-[2rem] border-b">
         <td>{{a}}</td>
       </tr>
       {% endfor %}

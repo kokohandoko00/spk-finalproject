@@ -1,1 +1,41 @@
-{% extends 'dasar.html'%}
+{% extends 'dasar.html'%} {% block satu %}
+<div class="container flex flex-col justify-center items-center w-3/5 h-full mt-[3rem]">
+  <h4 class="Title font-bold text-center text-2xl mt-[4rem]" >
+    Aplikasi Sistem Pendukung Keputusan </br> untuk memilih destinasi wisata Eropa
+  </h4>
+  <div class="description flex flex-col justify-center items-center w-full h-[30rem] my-[3rem] bg-sky-50 rounded-lg ">
+    <div class="flex flex-row w-3/4 ">
+      <div class="flex flex-col w-1/2 h-full pr-[3rem] text-md">
+        <p class="desc-text text-xl font-bold mb-2">
+          Wisata Eropa
+        </p>
+        <p class="desc-text ">
+          Tempat wisata di Eropa adalah salah tempat yang paling banyak diimpikan oleh setiap wisatawan. 
+          Hal ini disebabkan pemandangan kota, bangunan yang apik serta keindahan alam dari Eropa sendiri layak dijadikan sebagai lokasi wisata paling terkenal di seluruh penjuru dunia. 
+          Beberapa negara dari benua Eropa seperti Spanyol, Italia, Jerman dan lainnya mampu memberikan view menakjubkan yang akan membuat kamu berdecak kagum dan tidak ingin kembali ke tanah air.
+        </p>
+      </div>
+      <img class="desc-image w-[20rem] h-[20rem] object-fill rounded-lg" src="./static/img/europe-sightseeing.jpg " alt="europe" />
+    </div>
+  </div>
+  <div class="how-to flex flex-col justify-center items-center h-auto mt-[4rem] mb-[15rem]">
+    <p class="text-lg font-semibold">Lalu di manakah lokasi wisata paling hits di Eropa yang wajib di kunjungi jika <span class="font-bold underline decoration-sky-500 decoration-5">traveling ke Eropa?</span> </p>
+    <p class="text-md "> yuk, simak langkah-langkahnya berikut</p>
+    <div class="flow flex flex-row w-full justify-between align-center my-[3rem] ">
+      <div class="flow-alternatif flex flex-col w-[20rem] p-[2rem] bg-orange-50 rounded-lg">
+        <p class="font-semibold">
+          1. Mengisi pilihan alternatif
+        </p>
+        <p class="">isi form dengan dengan parameter keputusan untuk memilih destinasi wisata </p>
+      </div>
+      <div class="flow-perhitungan flex flex-col w-[20rem] p-[2rem] bg-orange-50 rounded-lg">
+        <p class="font-semibold">
+          2. Melihat hasil Perhitungan
+        </p>
+        <p class="">lihat hasil perhitungan pengambilan keputusan</p>
+      </div>
+    </div>
+    <p class=" text-lg font-semibold text-orange-600">Alternatif dan perhitungan dapat dicari pada navigation atas, terimakasih </p>
+  </div>
+  {% endblock satu %}
+</div>
