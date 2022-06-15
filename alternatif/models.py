@@ -11,12 +11,12 @@ class alternatif(models.Model):
         (3, 'SANGAT MENDUKUNG'),
     )
     c3 = models.FloatField(choices=angka, default=1)
-    prio = (
-        (1, 'SANGAT PRIORITAS'),
-        (2, 'PRIORITAS'),
-        (3, 'KURANG PRIORITAS'),
+    krim = (
+        (1, 'RENDAH'),
+        (2, 'SEDANG'),
+        (3, 'TINGGI'),
     )
-    c4 = models.FloatField(choices=prio, default=1)
+    c4 = models.FloatField(choices=krim, default=1)
     oleh = (
         (1, 'SULIT DIPEROLEH'),
         (2, 'SEDIKIT MUDAH DIPEROLEH'),
