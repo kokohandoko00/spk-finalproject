@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from math import ceil
+# from dictutil import func
 from django.db.models import Max, Min, F
 from alternatif.models import alternatif, normalisasi
 from alternatif.table import formtabel
@@ -8,24 +10,37 @@ def index(request):
     minc4 = alternatif.objects.aggregate(Min('c4')).get('c4__min')
     maxc2 = alternatif.objects.aggregate(Max('c2')).get('c2__max')
     maxc3 = alternatif.objects.aggregate(Max('c3')).get('c3__max')
-    maxc5 = alternatif.objects.aggregate(Max('c5')).get('c5__max')
+    # maxc5 = alternatif.objects.aggregate(Max('c5')).get('c5__max')
+    minc5 = alternatif.objects.aggregate(Min('c5')).get('c5__min')
     c1norm = alternatif.objects.values_list(F('c1')/minc1, flat=True)
     c2norm = alternatif.objects.values_list(F('c2')/maxc2, flat=True)
     c3norm = alternatif.objects.values_list(F('c3')/maxc3, flat=True)
     c4norm = alternatif.objects.values_list(F('c4')/minc4, flat=True)
-    c5norm = alternatif.objects.values_list(F('c5')/maxc5, flat=True)
+    # c5norm = alternatif.objects.values_list(F('c5')/maxc5, flat=True)
+    c5norm = alternatif.objects.values_list(F('c5')/minc5, flat=True)
 
     c1normbobot = alternatif.objects.values_list(F('c1')/minc1*0.25, flat=True)
     c2normbobot = alternatif.objects.values_list(F('c2')/maxc2*0.15, flat=True)
     c3normbobot = alternatif.objects.values_list(F('c3')/maxc3*0.30, flat=True)
     c4normbobot = alternatif.objects.values_list(F('c4')/minc4*0.25, flat=True)
-    c5normbobot = alternatif.objects.values_list(F('c5')/maxc5*0.05, flat=True)
+    # c5normbobot = alternatif.objects.values_list(F('c5')/maxc5*0.05, flat=True)
+    c5normbobot = alternatif.objects.values_list(F('c5')/minc5*0.05, flat=True)
 
-    result = alternatif.objects.all().annotate(prod=F('c1')/minc1*0.25 + 
-    F('c2')/maxc2*0.15 + F('c3')/maxc3*0.30 + F('c4')/minc4*0.25 + F('c5')/maxc5*0.05)
+    # result = alternatif.objects.all().annotate(prod=F('c1')/minc1*0.25 + 
+    # F('c2')/maxc2*0.15 + F('c3')/maxc3*0.30 + F('c4')/minc4*0.25 + F('c5')/maxc5*0.05)
+    # class Round(Func):
+    #     function = 'ROUND'
+    #     template='%(function)s(%(expressions)s, 2)'
+
+    result = alternatif.objects.all().annotate(prod=F('c1')/minc1*0.25 + F('c2')/maxc2*0.15 + F('c3')/maxc3*0.30 + F('c4')/minc4*0.25 + F('c5')/minc5*0.05).order_by('-prod')
+    # round_result = ceil(result*100)/100
+
+    # result2 = alternatif.objects.all().values_list(F('c1')/minc1*0.25 + 
+    # F('c2')/maxc2*0.15 + F('c3')/maxc3*0.30 + F('c4')/minc4*0.25 + F('c5')/maxc5*0.05)
 
     result2 = alternatif.objects.all().values_list(F('c1')/minc1*0.25 + 
-    F('c2')/maxc2*0.15 + F('c3')/maxc3*0.30 + F('c4')/minc4*0.25 + F('c5')/maxc5*0.05)
+    F('c2')/maxc2*0.15 + F('c3')/maxc3*0.30 + F('c4')/minc4*0.25 + F('c5')/minc5*0.05).order_by('-combinedexpression1')
+    # round_result2 = ceil(result2*100)/100
    
     context = {
         'title':'PERHITUNGAN',

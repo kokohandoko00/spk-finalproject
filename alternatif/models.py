@@ -4,25 +4,31 @@ class alternatif(models.Model):
     kodealternatif = models.CharField(max_length=3, primary_key=True)
     namaalternatif = models.CharField(max_length=25)
     c1 = models.FloatField()
-    c2 = models.FloatField()
+    suhu= (
+        (1, '< 0℃'),
+        (2, '0℃ - 15℃'),
+        (3, '> 15℃'),
+    )
+    # c2 = models.FloatField(choices=suhu, default=1)
+    c2 = models.FloatField(choices=suhu)
     angka= (
         (1, 'KURANG MENDUKUNG'),
         (2, 'CUKUP MENDUKUNG'),
         (3, 'SANGAT MENDUKUNG'),
     )
-    c3 = models.FloatField(choices=angka, default=1)
+    c3 = models.FloatField(choices=angka)
     krim = (
-        (1, 'RENDAH'),
-        (2, 'SEDANG'),
-        (3, 'TINGGI'),
+        (1, '< 40'),
+        (2, '40 - 60'),
+        (3, '> 60'),
     )
-    c4 = models.FloatField(choices=krim, default=1)
+    c4 = models.FloatField(choices=krim)
     oleh = (
-        (1, 'SULIT DIPEROLEH'),
-        (2, 'SEDIKIT MUDAH DIPEROLEH'),
-        (3, 'SANGAT MUDAH DIPEROLEH'),
+        (1, '< Rp 3.000.000'),
+        (2, 'Rp 3.000.000 - Rp 5.000.000'),
+        (3, '> Rp 5.000.000'),
     )
-    c5 = models.FloatField(choices=oleh, default=1)
+    c5 = models.FloatField(choices=oleh)
 
     def __str__(self):
         return "{}". format(self.kodealternatif)
