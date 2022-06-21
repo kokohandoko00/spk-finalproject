@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from .table import formtabel
 from django.db.models import Max, Min, F
 from .models import alternatif, normalisasi
+#build formtable, max, min, f, alternatif, and normalisasi
+
 def index(request):
     form_input = formtabel(request.POST or None)
     if form_input.is_valid():
